@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1 class="my-5 text-center">Онлайн-магазин електроніки</h1>  
+{% for type, message in get_flashed_messages(True) %}
+<div class="alert {{type}} m-3 position-absolute top-0 end-0"> {{message}} </div>
+{% endfor %}
+
 <section class = 'container card-group'>
     {% for item in items %}
-    <div class="card" style="min-width: 18rem; margin: 0.1%">
+    <div class="card m-3" style="min-width: 18rem; max-width: 18rem;">
       <img src="{{ url_for('static', filename='img/' + item[6]) }}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ item[1] }}</h5>

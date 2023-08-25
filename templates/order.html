@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h2>Оформлення замовлення</h2>
+    <div class="row">
+        <div class="col-4 col-md-2">
+          <img src="{{ url_for('static', filename='img/' + item[6]) }}" alt="" class="rounded img-fluid">
+        </div>
+        <div class="col-8 col-md-10">
+          <h4 class="my-4">{{item[1]}}</h2>
+          <h5 style="color:rgb(204, 204, 204)">{{item[4]}} грн</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8 my-5">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Кількість товару</label>
+                    <input required name="amount" type="number" min='1' 
+                    {% if item[5] < 5 %}
+                        max="{{ item[5] }}"
+                    {% else %}
+                        max="5"
+                    {% endif %}
+                    class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Ваше ім'я</label>
+                    <input required name="name" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Мобільний телефон</label>
+                    <input required name="phone" type="tel" class="form-control" id="exampleFormControlInput1" placeholder="+380(00)000000">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Ваше місто</label>
+                    <input required name="city" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Адреса доставки</label>
+                    <input required name="address" type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <button type="submit" class="btn btn-light my-btn">Оформити замовлення</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

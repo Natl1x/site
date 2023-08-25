@@ -27,9 +27,31 @@ class DataBase:
         self.open()
         
         self.cursor.execute("SELECT * FROM items WHERE id==(?)", [id])
-        data = self.cursor.fetchall()
+        data = self.cursor.fetchone()
         
         self.close()
         return data
-        
+
+    def get_categories(self):
+        self.open()
+        self.cursor.execute("SELECT * FROM categories")
+        data = self.cursor.fetchall()
+        self.close()
+        return data
+    
+
+    def get_category_items(self, id):
+        self.open()
+        self.cursor.execute("SELECT * FROM items WHERE category_id==(?)", [id])
+        data = self.cursor.fetchall()
+        self.close()
+        return data
+
+    def add_order(self, *data):
+        self.open()
+        self.cursor.execute('''INSERT INTO orders (item_id, name, phone, city, address, amount, cost)
+                            VALUES((?), (?), (?), (?), (?), (?), (?))''', [*data])
+        self.conn.commit()
+        self.close()
+
         

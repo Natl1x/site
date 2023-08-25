@@ -1,25 +1,37 @@
-  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-    Button with data-bs-target
-  </button>
+<nav class="navbar navbar-expand-lg"  style="background-color: #edf6fd;">
+  <div class="container-fluid">
+    <a class="navbar-brand h1 mb-0" href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='img/hanger.png') }}" alt="logo"  height="30" class="d-inline-block align-text-top">
+      LogikaShop</a>
+      <button class="btn btn-primary mx-lg-3 me-3 ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        Каталог
+      </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"> 
+          <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Головна</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
   
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Каталог</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div>
-        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-      </div>
-      <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {% for category in categories %}
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('category', id=category[0]) }}">{{category[1]}}</a></li>
+        {% endfor %}
+      </ul>
+      </div>    
     </div>
   </div>
