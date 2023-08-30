@@ -3,16 +3,21 @@
     <a class="navbar-brand h1 mb-0" style="color: white;" href="{{ url_for('index') }}">
       <img src="{{ url_for('static', filename='img/hanger.png') }}" alt="logo"  height="30" class="d-inline-block align-text-top">
       ElectroShop</a>
-      <button class="btn btn-primary mx-lg-3 me-3 ms-auto nav-link active" style="background-color: #212224; color: rgb(219, 219, 219);" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        Каталог
-      </button>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"> 
-          <a class="nav-link active" style="color: rgb(219, 219, 219);" aria-current="page" href="{{ url_for('index') }}">Головна</a>
+          <a class="nav-link active" style="color: rgb(219, 219, 219); text-align: center;" aria-current="page" href="{{ url_for('index') }}">Головна</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-primary nav-link active" style="width: 100%; background-color: #212224; color: rgb(219, 219, 219);" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            Каталог
+          </button>
+        </li>
+        <li class="nav-item" > 
+          <a class="nav-link active" style="text-align: center; color: rgb(219, 219, 219);" aria-current="page" href="{{ url_for('about_us') }}">Про нас</a>
         </li>
       </ul>
     </div>

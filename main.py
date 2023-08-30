@@ -16,6 +16,10 @@ def index():
     categories = db.get_categories()
     return render_template("index.html", items=items, categories = categories)
 
+@app.route("/about_us")
+def about_us():
+    return render_template("about_us.html")
+
 @app.route("/item/<item_id>")
 def item(item_id):
     item = db.get_item(item_id)
