@@ -14,24 +14,24 @@ app.config['SECRET_KEY'] = SECRET_KEY
 def index():
     items = db.get_all_items()
     categories = db.get_categories()
-    return render_template("index.html", items=items, categories = categories)
+    return render_template("index.html", items=items, categories = categories, title = "ElectroShop - Головна")
 
 @app.route("/about_us")
 def about_us():
-    return render_template("about_us.html")
+    return render_template("about_us.html", title = "ElectroShop - Про нас")
 
 @app.route("/item/<item_id>")
 def item(item_id):
     item = db.get_item(item_id)
     categories = db.get_categories()
     items = db.get_category_items(item[3])
-    return render_template("item.html", item=item, categories = categories, items=items[:4])
+    return render_template("item.html", item=item, categories = categories, items=items[:4], title = "ElectroShop - Річ" )
 
 @app.route("/category/<id>")
 def category(id):
     categories = db.get_categories()
     items = db.get_category_items(id)
-    return render_template("category.html", items=items, categories = categories)
+    return render_template("category.html", items=items, categories = categories, title = "ElectroShop - Категорії")
 
 @app.route("/order/<item_id>", methods = ["GET", "POST"])
 def order(item_id):
@@ -51,7 +51,7 @@ def order(item_id):
         except:
             flash("Помилка оформлення замовлення!", "alert-danger") #надсилаємо швидкі сповіщення у браузер
 
-    return render_template("order.html", item=item, categories = categories)
+    return render_template("order.html", item=item, categories = categories, title = "ElectroShop - Оформлення замовлення")
 
 if __name__ == "__main__":
     app.config['TEMPLATES_AUTO_RELOAD'] = True

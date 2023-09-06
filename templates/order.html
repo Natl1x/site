@@ -16,9 +16,9 @@
     <div class="row">
         <div class="col-12 col-md-8 my-5">
             <form action="" method="post">
-                <div class="mb-3">
+                <div class="mb-3" data-bs-theme="dark">
                     <label for="exampleFormControlInput1" class="form-label">Кількість товару</label>
-                    <input required name="amount" type="number" min='1' 
+                    <input required name="amount" type="number"  style="background-color: rgb(31, 31, 31);"  min='1' 
                     {% if item[5] < 5 %}
                         max="{{ item[5] }}"
                     {% else %}
@@ -26,24 +26,24 @@
                     {% endif %}
                     class="form-control" id="exampleFormControlInput1">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" data-bs-theme="dark">
                     <label for="exampleFormControlInput1" class="form-label">Ваше ім'я</label>
-                    <input required name="name" type="text" class="form-control" id="exampleFormControlInput1">
+                    <input required name="name" type="text" style="background-color: rgb(31, 31, 31);" class="form-control" id="exampleFormControlInput1">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" data-bs-theme="dark">
                     <label for="exampleFormControlInput1" class="form-label">Мобільний телефон</label>
-                    <input required name="phone" type="tel" class="form-control" id="exampleFormControlInput1" placeholder="+380(00)000000">
+                    <input required name="phone" type="tel" style="background-color: rgb(31, 31, 31);"  class="form-control" id="exampleFormControlInput1" placeholder="+380(00)000000">
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3" data-bs-theme="dark">
                     <label for="exampleFormControlInput1" class="form-label">Ваше місто</label>
-                    <input required name="city" type="text" class="form-control" id="exampleFormControlInput1">
+                    <input required name="city" type="text" style="background-color: rgb(31, 31, 31);"  class="form-control" id="exampleFormControlInput1">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" data-bs-theme="dark">
                     <label for="exampleFormControlInput1" class="form-label">Адреса доставки</label>
-                    <input required name="address" type="text" class="form-control" id="exampleFormControlInput1">
+                    <input required name="address" type="text" style="background-color: rgb(31, 31, 31);"  class="form-control" id="exampleFormControlInput1">
                 </div>
-                <button type="submit" class="btn btn-light my-btn">Оформити замовлення</button>
+                <button type="submit" class="btn btn-light my-btn" data-bs-theme="dark" style="background-color: rgb(53, 53, 53); color: white;">Оформити замовлення</button>
 
             </form>
         </div>

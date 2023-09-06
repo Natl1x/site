@@ -1,55 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
-<div style="color: rgb(219, 219, 219);">
-    <h1>Про нас</h1>
+<div style="font-size: larger; margin-left: 20px; margin-right: 20px;" style="color: rgb(219, 219, 219);">
+    <h1 style="margin-top: 20px; margin-bottom: 20px;">Про нас</h1>
 
-    <p>ElectroShop - учбовий онлайн-магазин створений для відритого уроку на курсах Logika Максимом Яцківим. 
-        У цьому магазині Ви можете придбати багато корисною техніки просто сидячи дома, як для роботи так і для ігор! 
+    <p style="font-size: larger;">ElectroShop - учбовий онлайн-магазин Максима Яцківа, створений для відкритого уроку на курсах Logika. 
+        У цьому магазині Ви можете придбати багато корисної техніки, просто сидячи дома, як для роботи, так і для ігор! 
     </p>
-    <h4>Чому саме ми?</h4>
+    <h3 style="margin-top: 20px; margin-bottom: 20px;">Чому саме ми?</h3>
 
-    <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div  class="accordion accordion-flush" style="font-size: larger; border-radius: 20px 20px 20px 20px;" data-bs-theme="dark" id="accordionFlushExample">
         <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <button class="accordion-button collapsed" style="background-color: rgb(36, 36, 36); color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" >
                 Швидка та якісна доставка!
             </button>
         </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+        <div style="background-color: rgb(36, 36, 36); color: white;" id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Наша компанія співпрацює з поштою "Нова Пошта". Тому вам достатньо почекати максимум 3 дня, адже ця почта швидка!</div>
         </div>
         </div>
         <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            <button class="accordion-button collapsed" style="background-color: rgb(36, 36, 36); color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                 Не дорогі брендові речі!
             </button>
         </h2>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+        <div style="background-color: rgb(36, 36, 36); color: white;" id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">У нас ви можете знайти багато бредні з ціною нижче ринку!</div>
         </div>
         </div>
         <div class="accordion-item">
         <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            <button class="accordion-button collapsed" style="background-color: rgb(36, 36, 36); color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                 Багато хороших відгуків!
             </button>
         </h2>
-        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-        </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Швидка тех-підтримка!
-            </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-            </div>
+        <div style="background-color: rgb(36, 36, 36); color: white;" id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Хоч ми новий магазин, але покупки та зодно відгуки появилися швидко!</div>
         </div>
     </div>
+<p style="margin-top: 20px; margin-bottom: 20px;">Гарного вам дня та якісного товару! </p>
 </div>
-Гарного вам дня та якісного товару!)    
+
 {% endblock content %}
