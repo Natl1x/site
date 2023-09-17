@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 from settings import *
 from sql_queries import DataBase
+import telebot
 
 #=============================================
 
-app = Flask(__name__)
+bot = telebot.TeleBot('6351962417:AAFPV9c8ODUa-hqr28ccY9K5wJIK3c71E8w')
+app = Flask(name)
 db = DataBase()
 app.config['SECRET_KEY'] = SECRET_KEY
 
@@ -47,13 +49,16 @@ def order(item_id):
                         request.form["amount"],
                         item[4])
             flash("Додано замовлення!", "alert-light") #надсилаємо швидкі сповіщення у браузер
+            chat_id = 1424853350
+            bot.send_message(chat_id, text=f"{name}")
             return redirect(url_for('index')) #перенаправляємо на головну сторінку
         except:
             flash("Помилка оформлення замовлення!", "alert-danger") #надсилаємо швидкі сповіщення у браузер
 
     return render_template("order.html", item=item, categories = categories, title = "ElectroShop - Оформлення замовлення")
 
-if __name__ == "__main__":
+if name == "main":
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(debug=True)
-    
+
+bot.polling(none_stop=True)
